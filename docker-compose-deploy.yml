@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+    nginx:
+        image: nginx
+        volumes:
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+            - web-statis:/www/static
+            - web-media:/www/media
+        ports:
+            - "80:80"
+
+    web:
+        build: ./web
+        volumes:
+            - ./web:/app
+            - web-static:/app/static
+            - web-media:/app/media
+        ports:
+            - "8000:8000"
+        links:
+            - postgres:postgres
+            - redis:redis
+        command: gunicorn project.wsgi:application -w 4 -b :8000
+
+    postgres:
+        image: postgres
+        restart: always
+        volumes:
+            - ./db:/var/lib/postgresql/data/
+        ports:
+            - "5432:5432"
+
+    redis:
+        image: redis
+        restart: always
+        ports:
+            - "6379:6379"
