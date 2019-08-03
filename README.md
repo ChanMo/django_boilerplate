@@ -4,7 +4,7 @@ Django项目的简易Docker模板
 
 ## 包含
 
-* django
+* django2.2
 * postgres
 * gunicorn
 * redis
