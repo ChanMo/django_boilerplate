@@ -1,0 +1,17 @@
+[Unit]
+Description=ExampleService
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/demo/
+ExecStart=docker-compose up
+ExecStop=docker-compose stop
+ExecReload=docker-compose restart
+StandardOutput=journal+console
+StandardError=journal+console
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
