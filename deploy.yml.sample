@@ -5,6 +5,7 @@ services:
         image: nginx
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./logs/nginx:/var/log/nginx
             - web-statis:/www/static
             - web-media:/www/media
         ports:
@@ -14,10 +15,13 @@ services:
         build: ./web
         volumes:
             - ./web:/app
+            - ./logs/web:/var/log/web
             - web-static:/app/static
             - web-media:/app/media
         ports:
             - "8000:8000"
+        env_file:
+            - .deploy_env
         links:
             - postgres:postgres
             - redis:redis
