@@ -6,7 +6,7 @@ services:
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/default.conf
             - ./logs/nginx:/var/log/nginx
-            - web-statis:/www/static
+            - web-static:/www/static
             - web-media:/www/media
         ports:
             - "80:80"
