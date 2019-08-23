@@ -40,8 +40,8 @@ $ docker-compose exec web python manage.py migrate
 
 ### 创建文件
 ```
-$ mv deploy.conf.sample deploy.conf
-$ mv nginx.conf.sample nginx.conf
+$ cp deploy.conf.sample deploy.conf
+$ cp nginx.conf.sample nginx.conf
 $ cp .env .deploy_env
 ```
 
