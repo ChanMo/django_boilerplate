@@ -1,2 +1,9 @@
 __pycache__
 *.pyc
+
+db/
+migrations/
+
+.deploy_env
+deploy.yml
+nginx.conf
