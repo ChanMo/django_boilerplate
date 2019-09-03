@@ -1,0 +1,6 @@
+Pillow
+Django
+psycopg2
+gunicorn
+redis
+django-redis
