@@ -8,3 +8,5 @@ migrations/
 .deploy_env
 deploy.yml
 nginx.conf
+
+.fabfile.py
