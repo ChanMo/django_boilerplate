@@ -2,7 +2,7 @@ FROM python:3
 
 RUN apt-get update && apt-get install -y gettext
 
-RUN mkdir /var/log/web
+RUN mkdir /var/log/api
 WORKDIR /app
 
 COPY requirements.txt /app/
