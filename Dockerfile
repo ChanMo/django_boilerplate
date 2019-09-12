@@ -2,4 +2,4 @@ FROM python:3
 
 WORKDIR /app
 
-RUN pip install django
+RUN pip install -U django
