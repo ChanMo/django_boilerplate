@@ -1,4 +1,4 @@
-from web.settings import *
+from api.settings import *
 
 DEBUG = True
 ALLOWED_HOSTS = ['*']
