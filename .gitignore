@@ -9,4 +9,4 @@ migrations/
 deploy.yml
 nginx.conf
 
-.fabfile.py
+fabfile.py
