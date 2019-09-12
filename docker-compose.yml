@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-    web:
-        build: ./web
+    api:
+        build: ./api
         volumes:
-            - ./web:/app
+            - ./api:/app
         ports:
             - "8000:8000"
         links:
