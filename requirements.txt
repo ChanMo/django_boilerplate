@@ -1,5 +1,5 @@
 Pillow
-Django==3.0
+Django
 psycopg2
 gunicorn
 redis
