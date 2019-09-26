@@ -11,21 +11,21 @@ services:
         ports:
             - "80:80"
 
-    web:
-        build: ./web
+    api:
+        build: ./api
         volumes:
-            - ./web:/app
-            - ./logs/web:/var/log/web
-            - ./web/static:/app/static
-            - ./web/media:/app/media
+            - ./api:/app
+            - ./logs/api:/var/log/web
+            - ./api/static:/app/static
+            - ./api/media:/app/media
         ports:
             - "8000:8000"
-        env_file:
-            - .deploy_env
         links:
             - postgres:postgres
-            - redis:redis
-        command: gunicorn project.wsgi:application -w 4 -b :8000
+        env_file:
+            - .deploy_env
+        command: gunicorn api.wsgi:application -w 4 -b :8000
+
 
     postgres:
         image: postgres
