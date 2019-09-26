@@ -68,6 +68,6 @@ $ fab -H demo deploy
 ## Next
 
 - [] 自动测试
-- [] 统一命令行脚本
-- [] 自动secret_key
-- [] 日志收集
+- [*] 统一命令行脚本
+- [*] 自动secret_key
+- [*] 日志收集
