@@ -5,9 +5,10 @@ Requires=docker.service
 
 [Service]
 Type=simple
-ExecStart=docker-compose -f /path/to/demo/deploy.yml up
-ExecStop=docker-compose -f /path/to/demo/deploy.yml stop
-ExecReload=docker-compose -f /path/to/demo/deploy.yml restart
+WorkingDirectory=/path/to/demo/
+ExecStart=/usr/bin/docker-compose -f deploy.yml up
+ExecStop=/usr/bin/docker-compose -f deploy.yml stop
+ExecReload=/usr/bin/docker-compose -f deploy.yml restart
 StandardOutput=journal+console
 StandardError=journal+console
 Restart=always
