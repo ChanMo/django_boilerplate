@@ -10,3 +10,6 @@ deploy.yml
 nginx.conf
 
 fabfile.py
+
+api/static/*
+api/media/*
