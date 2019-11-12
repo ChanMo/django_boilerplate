@@ -15,7 +15,7 @@ services:
         build: ./api
         volumes:
             - ./api:/app
-            - ./logs/api:/var/log/web
+            - ./logs/api:/var/log/api
             - ./api/static:/app/static
             - ./api/media:/app/media
         ports:
