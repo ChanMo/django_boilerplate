@@ -3,7 +3,8 @@ __pycache__
 
 logs/
 db/
-migrations/
+api/*/migrations/*
+!api/*/migrations/__init__.py
 
 .deploy_env
 deploy.yml
